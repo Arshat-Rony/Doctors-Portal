@@ -8,7 +8,7 @@ const Banner = () => {
                 <img className='h-screen' src={bg} alt="" />
                 <div className="hero-content  flex-col lg:flex-row-reverse justify-between">
                     <div>
-                        < img src={chair} className="max-w-lg rounded-lg shadow-2xl" alt='chair-pic' />
+                        < img src={chair} className="max-w-sm rounded-lg shadow-2xl" alt='chair-pic' />
                     </div>
                     <div className='pl-8 lg:pl-0 lg:pr-32'>
                         <h1 className="text-5xl font-bold text-accent">Making Health Care Better Together</h1>
