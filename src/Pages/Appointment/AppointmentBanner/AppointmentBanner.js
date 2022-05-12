@@ -4,11 +4,10 @@ import 'react-day-picker/dist/style.css';
 import chair from '../../../assets/images/chair.png'
 import bgPic from '../../../../src/assets/images/bg.png'
 import { format } from 'date-fns';
-const AppointmentBanner = () => {
-    const [date, setDate] = useState(new Date())
+const AppointmentBanner = ({ date, setDate }) => {
     let footer = '';
     if (date) {
-        footer = <p className='bg-accent p-3 rounded-lg text-white font-bold'>You picked <span className="text-primary">{format(date, 'PP')}</span>.</p>;
+        footer = <div className='bg-accent p-3 rounded-lg text-white font-bold'>You picked <span className="text-primary">{format(date, 'PP')}</span>.</div>;
     }
     return (
         <section style={{ background: `url(${bgPic})` }}>

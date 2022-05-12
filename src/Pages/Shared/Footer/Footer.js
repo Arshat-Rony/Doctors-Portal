@@ -9,9 +9,10 @@ const Footer = () => {
                 <footer style={{
                     background: `url(${footer})`,
                     backgroundSize: "cover",
-                    width: "100%"
-                }} className="footer p-16 justify-between text-dark">
-                    <div>
+                    width: "100%",
+                    height: "100%"
+                }} className="footer px-16 py-28 justify-between text-dark">
+                    <div >
                         <span className="footer-title text-accent">Services</span>
                         <a className="link link-hover">Branding</a>
                         <a className="link link-hover">Design</a>
