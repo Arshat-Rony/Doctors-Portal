@@ -11,11 +11,11 @@ const AppointmentBanner = ({ date, setDate }) => {
     }
     return (
         <section style={{ background: `url(${bgPic})` }}>
-            <div class="card w-11/12 mx-auto card-side flex flex-col lg:flex-row-reverse justify-start pt-32">
+            <div className="card w-11/12 mx-auto card-side flex flex-col lg:flex-row-reverse justify-start pt-32">
                 <figure className='flex-1 '>
                     <img src={chair} alt="Chair" />
                 </figure>
-                <div class="card-body flex-1 items-center ">
+                <div className="card-body flex-1 items-center ">
                     <DayPicker className='shadow-sm bg-white p-16 rounded-lg'
                         mode='single'
                         selected={date}

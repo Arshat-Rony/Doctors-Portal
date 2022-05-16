@@ -1,5 +1,6 @@
 import { data } from 'autoprefixer';
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import footer from '../../../../src/assets/images/footer.png'
 const Footer = () => {
     const date = new Date()

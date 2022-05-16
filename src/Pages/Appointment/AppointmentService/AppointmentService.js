@@ -1,21 +1,24 @@
 
 import { format } from 'date-fns';
 import React, { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
+import Loading from '../../Shared/Loading';
 import AppointmentServiceSingle from '../AppointmentServiceSingle/AppointmentServiceSingle';
 import BookingModal from '../BookingModal';
 
 const AppointmentService = ({ date }) => {
-    const [services, setServices] = useState([])
     const [treatment, setTreatment] = useState({})
+    const formattedDate = format(date, "PP")
+    const { isLoading, data: services, refetch } = useQuery(['repoData', formattedDate], () =>
+        fetch(`http://localhost:5000/available?date=${formattedDate}`).then(res =>
+            res.json()
+        )
+    )
 
-    useEffect(() => {
-        fetch('http://localhost:5000/services')
-            .then(res => res.json())
-            .then(data => {
-                setServices(data)
-            })
-    }, [])
-    console.log(services)
+    if (isLoading) {
+        return <Loading></Loading>
+    }
+
 
     return (
         <div className='mt-36'>
@@ -28,7 +31,7 @@ const AppointmentService = ({ date }) => {
                 {
                     services.map(service =>
                         <AppointmentServiceSingle
-                            key={service.id}
+                            key={service._id}
                             service={service}
                             setTreatment={setTreatment}
                         ></AppointmentServiceSingle>
@@ -36,7 +39,12 @@ const AppointmentService = ({ date }) => {
                 }
             </div>
             {
-                treatment && <BookingModal setTreatment={setTreatment} date={date} treatment={treatment}></BookingModal>
+                treatment && <BookingModal
+                    setTreatment={setTreatment}
+                    date={date}
+                    treatment={treatment}
+                    refetch={refetch}
+                ></BookingModal>
             }
         </div>
     );
