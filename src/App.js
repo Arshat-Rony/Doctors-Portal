@@ -14,6 +14,8 @@ import Myappointment from './Pages/Dashboard/Myappointment';
 import Review from './Pages/Dashboard/Review';
 import Allusers from './Pages/Dashboard/Allusers';
 import RequireAdmin from './Pages/Shared/RequireAdmin';
+import AddDoctor from './Pages/Dashboard/AddDoctor';
+import ManageDoctors from './Pages/Dashboard/ManageDoctors';
 
 
 function App() {
@@ -36,11 +38,17 @@ function App() {
             <Dashboard />
           </RequireAuth>
         }>
-          <Route index element={<Review />}></Route>
+          <Route index element={<Myappointment />}></Route>
           <Route path='myappointments' element={<Myappointment />}></Route>
           <Route path='review' element={<Review></Review>} />
           <Route path='allusers' element={<RequireAdmin>
             <Allusers />
+          </RequireAdmin>} />
+          <Route path='addoctor' element={<RequireAdmin>
+            <AddDoctor />
+          </RequireAdmin>} />
+          <Route path='managedoctor' element={<RequireAdmin>
+            <ManageDoctors />
           </RequireAdmin>} />
         </Route>
       </Routes>

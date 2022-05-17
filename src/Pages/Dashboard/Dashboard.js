@@ -12,7 +12,7 @@ const Dashboard = () => {
 
             <input id="sidebar-btn" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content">
-                {/* <!-- Page content here --> */}
+
                 <Outlet></Outlet>
             </div>
             <div class="drawer-side">
@@ -22,7 +22,11 @@ const Dashboard = () => {
                     <li><Link to='/dashboard/myappointments'>All Appointments</Link></li>
                     <li><Link to="/dashboard/review">Reviews</Link></li>
                     {
-                        admin && <li><Link to="/dashboard/allusers">All Users</Link></li>
+                        admin && <>
+                            <li><Link to="/dashboard/allusers">All Users</Link></li>
+                            <li><Link to="/dashboard/addoctor">Add Doctor</Link></li>
+                            <li><Link to="/dashboard/managedoctor">Manage Doctor</Link></li>
+                        </>
                     }
                 </ul>
 
