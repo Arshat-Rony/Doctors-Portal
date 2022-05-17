@@ -5,7 +5,7 @@ const useAdmin = (user) => {
     const [adminLoading, setAdminLoading] = useState(true)
 
     useEffect(() => {
-        const url = `http://localhost:5000/admin/${user.email}`
+        const url = `https://doctors-potal-server-side.herokuapp.com/admin/${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => {

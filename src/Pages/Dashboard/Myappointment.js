@@ -8,7 +8,7 @@ const Myappointment = () => {
     const navigate = useNavigate()
     const [bookings, setBookings] = useState([])
     useEffect(() => {
-        const url = `http://localhost:5000/bookings?patient=${user?.email}`
+        const url = `https://doctors-potal-server-side.herokuapp.com/bookings?patient=${user?.email}`
         fetch(url, {
             method: "GET",
             headers: {

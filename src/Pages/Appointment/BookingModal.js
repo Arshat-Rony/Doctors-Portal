@@ -22,7 +22,7 @@ const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
             date: format(date, "PP"),
             phone: e.target.phone.value,
         }
-        const url = `http://localhost:5000/bookings`
+        const url = `https://doctors-potal-server-side.herokuapp.com/bookings`
         fetch(url, {
             method: 'POST',
             headers: {

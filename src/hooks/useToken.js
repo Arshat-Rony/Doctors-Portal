@@ -6,7 +6,7 @@ const useToken = (user) => {
     useEffect(() => {
         const email = user?.user?.email;
         const currentUser = { email: email }
-        const url = `http://localhost:5000/users/${email}`
+        const url = `https://doctors-potal-server-side.herokuapp.com/users/${email}`
         fetch(url, {
             method: "PUT",
             headers: {
