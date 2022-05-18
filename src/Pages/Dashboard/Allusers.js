@@ -24,8 +24,8 @@ const Allusers = () => {
             <h2>This is allusers page {data.length}</h2>
 
 
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th>S/L No</th>

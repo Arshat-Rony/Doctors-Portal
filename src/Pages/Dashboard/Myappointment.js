@@ -31,8 +31,8 @@ const Myappointment = () => {
         <div>
             <h2 className='text-2xl text-secondary font-bold text-center mt-10'>Welcome to Your Dahsboard </h2>
             <p className='text-sm text-center mb-10'> Total Appointment <span className='badge font-bold'>{bookings.length}</span></p>
-            <div class="overflow-x-hidden">
-                <table class="table w-full">
+            <div className="overflow-x-hidden">
+                <table className="table w-full">
                     <thead>
                         <tr className=''>
                             <th>S/L No</th>
